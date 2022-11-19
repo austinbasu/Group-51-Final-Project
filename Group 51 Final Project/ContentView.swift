@@ -16,7 +16,7 @@ struct ContentView: View {
                             .padding(.all)
                             .navigationTitle("Dashboard")
                     }).offset(y: -75)
-                    NavigationLink(destination: RecommendationView(), label: {
+                    NavigationLink(destination: MovieListView(), label: {
                         Text("Movie List")
                             .frame(width: 200, height: 50, alignment: .center)
                             .background(Color.white)
@@ -24,7 +24,7 @@ struct ContentView: View {
                             .clipShape(Capsule())
                             .padding(.all)
                     }).offset(y: -50)
-                    NavigationLink(destination: RecommendationView(), label: {
+                    NavigationLink(destination: WatchListView(), label: {
                         Text("Watchlist")
                             .frame(width: 200, height: 50, alignment: .center)
                             .background(Color.white)
