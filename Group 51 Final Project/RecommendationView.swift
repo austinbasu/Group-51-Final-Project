@@ -1,4 +1,6 @@
 import SwiftUI
+import WeatherKit
+import CoreLocation
 
 struct RecommendationView: View {
     var body: some View {

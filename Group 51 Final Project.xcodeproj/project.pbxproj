@@ -14,6 +14,7 @@
 		D908D63D292870A30058B778 /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908D63C292870A30058B778 /* RecommendationView.swift */; };
 		D908D63F292872100058B778 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908D63E292872100058B778 /* MovieListView.swift */; };
 		D908D641292872460058B778 /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908D640292872460058B778 /* WatchListView.swift */; };
+		D908D643292874DB0058B778 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908D642292874DB0058B778 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D908D63C292870A30058B778 /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
 		D908D63E292872100058B778 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		D908D640292872460058B778 /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
+		D908D642292874DB0058B778 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				D908D640292872460058B778 /* WatchListView.swift */,
 				D908D63E292872100058B778 /* MovieListView.swift */,
 				D908D63C292870A30058B778 /* RecommendationView.swift */,
+				D908D642292874DB0058B778 /* Movie.swift */,
 				D908D63229286FEE0058B778 /* Assets.xcassets */,
 				D908D63429286FEE0058B778 /* Preview Content */,
 			);
@@ -148,6 +151,7 @@
 			files = (
 				D908D63129286FEC0058B778 /* ContentView.swift in Sources */,
 				D908D63F292872100058B778 /* MovieListView.swift in Sources */,
+				D908D643292874DB0058B778 /* Movie.swift in Sources */,
 				D908D62F29286FEC0058B778 /* Group_51_Final_ProjectApp.swift in Sources */,
 				D908D641292872460058B778 /* WatchListView.swift in Sources */,
 				D908D63D292870A30058B778 /* RecommendationView.swift in Sources */,
