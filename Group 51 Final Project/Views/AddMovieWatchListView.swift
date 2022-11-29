@@ -21,7 +21,7 @@ struct AddMovieWatchListView: View {
             if (movieName != "")
             {
                 yourRatingCon = Double(yourRating) ?? 5.0
-                movieModel.addToWatchList(movieName: movieName, yourRatingCon: Double(yourRating)!)
+                movieModel.addToWatchList(movieName: movieName, yourRatingCon: yourRatingCon)
             }
         }
     }

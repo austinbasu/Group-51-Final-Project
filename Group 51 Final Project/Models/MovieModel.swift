@@ -8,15 +8,12 @@
 import Foundation
 
 struct MovieType: Codable, Hashable {
+    //var earthquakes: [Info] = []
     var movieTitle: String!
     var description: String!
     var releaseDate: String!
     var rating: Double!
-<<<<<<< Updated upstream:Group 51 Final Project/MovieModel.swift
-=======
     var genre: String!
-    var userRating:Double!
->>>>>>> Stashed changes:Group 51 Final Project/Models/MovieModel.swift
 }
 
 struct getJSON: Codable {
@@ -28,13 +25,13 @@ struct Info: Codable {
     let overview: String
     let vote_average: Double
     let release_date: String
-  
+    let genre_ids: [Int]
 }
 
 class MovieModel : ObservableObject {
     @Published var movieList = [MovieType]()
     @Published var watchList = [MovieType]()
-
+    @Published var genres = [28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama", 10751: "Family", 14: "Fantasy", 36: "History", 27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western"]
     
     init() {
         
@@ -70,12 +67,17 @@ class MovieModel : ObservableObject {
             newMovie.rating = json[0].vote_average
             newMovie.movieTitle = json[0].original_title
             newMovie.releaseDate = json[0].release_date
+            var tempGenre = ""
+            for genre in json[0].genre_ids {
+                tempGenre = tempGenre + "\(self.genres[genre]!) "
+            }
+            //print(json[0].genre_ids)
+            newMovie.genre = tempGenre
 
-            
-            print(newMovie.description)
+            /*print(newMovie.description)
             print(newMovie.rating)
             print(newMovie.movieTitle)
-            print(newMovie.releaseDate)
+            print(newMovie.releaseDate)*/
 
             self.movieList.append(newMovie!)
         })
@@ -83,10 +85,6 @@ class MovieModel : ObservableObject {
         
     }
     
-<<<<<<< Updated upstream:Group 51 Final Project/MovieModel.swift
-    func addToWatchList() {
-        
-=======
     func addToWatchList(movieName: String, yourRatingCon: Double) {
         guard let url = URL(string:"https://api.themoviedb.org/3/search/movie?api_key=ee09f64be7f9569445877a12fb0023ff&language=en-US&query=\(movieName)&include_adult=false") else {
                 print("Invalid URL")
@@ -116,8 +114,8 @@ class MovieModel : ObservableObject {
             var newMovie: MovieType! = MovieType()
             
             newMovie.description = json[0].overview
-            newMovie.rating = json[0].vote_average
-            newMovie.userRating = yourRatingCon
+           // newMovie.rating = json[0].vote_average
+            newMovie.rating = yourRatingCon
             newMovie.movieTitle = json[0].original_title
             newMovie.releaseDate = json[0].release_date
 
@@ -137,7 +135,6 @@ class MovieModel : ObservableObject {
             self.watchList.append(newMovie!)
         })
         task.resume()
->>>>>>> Stashed changes:Group 51 Final Project/Models/MovieModel.swift
     }
     
    

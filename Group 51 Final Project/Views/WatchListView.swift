@@ -9,7 +9,7 @@ struct WatchListView: View {
                 List {
                     ForEach(movieModel.watchList, id: \.self) { movie in
                         Text("\(movie.movieTitle!)")
-                        Text("\(movie.userRating!)")
+                        Text("\(movie.rating!)")
                         NavigationLink("View Movie", destination:DetailMovieView(title: movie.movieTitle, descr: movie.description, rating: movie.rating, releaseDate: movie.releaseDate, genre: movie.genre))
                     }
                 }

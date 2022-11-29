@@ -1,13 +1,6 @@
-//
-//  DashboardView.swift
-//  Group 51 Final Project
-//
-//  Created by Jacob Ong on 11/25/22.
-//
-
 import SwiftUI
 
-struct DashboardView: View {
+struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack{
@@ -46,8 +39,8 @@ struct DashboardView: View {
     }
 }
 
-struct DashboardView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView()
+        ContentView()
     }
 }

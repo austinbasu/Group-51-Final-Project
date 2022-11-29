@@ -15,7 +15,7 @@ struct MovieListView: View {
                 List {
                     ForEach(movieModel.movieList, id: \.self) { movie in
                         Text("\(movie.movieTitle!)")
-                        NavigationLink("View Movie", destination:DetailView(title: movie.movieTitle, descr: movie.description, rating: movie.rating, releaseDate: movie.releaseDate))
+                        NavigationLink("View Movie", destination:DetailMovieView(title: movie.movieTitle, descr: movie.description, rating: movie.rating, releaseDate: movie.releaseDate, genre: movie.genre))
                     }
                 }
             }
