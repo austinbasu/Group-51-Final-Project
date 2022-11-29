@@ -8,12 +8,12 @@
 import Foundation
 
 struct MovieType: Codable, Hashable {
-    //var earthquakes: [Info] = []
     var movieTitle: String!
     var description: String!
     var releaseDate: String!
     var rating: Double!
     var genre: String!
+    var userRating: Double!
 }
 
 struct getJSON: Codable {
@@ -114,8 +114,8 @@ class MovieModel : ObservableObject {
             var newMovie: MovieType! = MovieType()
             
             newMovie.description = json[0].overview
-           // newMovie.rating = json[0].vote_average
-            newMovie.rating = yourRatingCon
+            newMovie.rating = json[0].vote_average
+            newMovie.userRating = yourRatingCon
             newMovie.movieTitle = json[0].original_title
             newMovie.releaseDate = json[0].release_date
 
