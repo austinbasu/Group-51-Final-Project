@@ -39,6 +39,9 @@ struct MovieListView: View {
             {
                 Label("Add", systemImage: "plus.app")
             }
+                NavigationLink(destination: RecommendationView(movieModel: movieModel)) {
+                    Label("Recommend", systemImage: "hand.thumbsup.fill")
+                }
             }
         }
         }

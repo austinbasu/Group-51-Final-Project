@@ -8,12 +8,12 @@
 import Foundation
 
 struct MovieType: Codable, Hashable {
-    //var earthquakes: [Info] = []
     var movieTitle: String!
     var description: String!
     var releaseDate: String!
     var rating: Double!
     var genre: String!
+    var userRating: Double!
 }
 
 struct getJSON: Codable {
@@ -85,12 +85,14 @@ class MovieModel : ObservableObject {
         
     }
     
-    func addToWatchList(movieName: String) {
+    func addToWatchList(movieName: String, yourRatingCon: Double) {
         guard let url = URL(string:"https://api.themoviedb.org/3/search/movie?api_key=ee09f64be7f9569445877a12fb0023ff&language=en-US&query=\(movieName)&include_adult=false") else {
                 print("Invalid URL")
                 return
             }
+        
       print(url)
+        
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             guard let data = data, error == nil else {
                 print("bad things")
@@ -113,14 +115,22 @@ class MovieModel : ObservableObject {
             
             newMovie.description = json[0].overview
             newMovie.rating = json[0].vote_average
+            newMovie.userRating = yourRatingCon
             newMovie.movieTitle = json[0].original_title
             newMovie.releaseDate = json[0].release_date
 
+            var tempGenre = ""
+            for genre in json[0].genre_ids {
+                tempGenre = tempGenre + "\(self.genres[genre]!) "
+            }
+            //print(json[0].genre_ids)
+            newMovie.genre = tempGenre
             
             print(newMovie.description)
             print(newMovie.rating)
             print(newMovie.movieTitle)
             print(newMovie.releaseDate)
+            print(newMovie.genre)
 
             self.watchList.append(newMovie!)
         })

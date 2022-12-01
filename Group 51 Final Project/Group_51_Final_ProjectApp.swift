@@ -12,9 +12,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct Group_51_Final_ProjectApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
     var body: some Scene {
         WindowGroup {
             Login()

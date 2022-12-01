@@ -7,6 +7,7 @@ struct ContentView: View {
                 LinearGradient(colors: [.indigo, .teal], startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
+                    /*
                     NavigationLink(destination: RecommendationView(), label: {
                         Text("Movie Recommendation")
                             .frame(width: 200, height: 50, alignment: .center)
@@ -15,7 +16,7 @@ struct ContentView: View {
                             .clipShape(Capsule())
                             .padding(.all)
                             .navigationTitle("Dashboard")
-                    }).offset(y: -75)
+                    }).offset(y: -75) */
                     NavigationLink(destination: MovieListView(), label: {
                         Text("Movie List")
                             .frame(width: 200, height: 50, alignment: .center)
@@ -23,7 +24,8 @@ struct ContentView: View {
                             .foregroundColor(.blue)
                             .clipShape(Capsule())
                             .padding(.all)
-                    }).offset(y: -50)
+                            .navigationTitle("Dashboard")
+                    }).offset(y: -40)
                     NavigationLink(destination: WatchListView(), label: {
                         Text("Watchlist")
                             .frame(width: 200, height: 50, alignment: .center)
@@ -31,7 +33,7 @@ struct ContentView: View {
                             .foregroundColor(.blue)
                             .clipShape(Capsule())
                             .padding(.all)
-                    }).offset(y: -25)
+                    }).offset(y: -20)
                     Spacer()
                 }
             }

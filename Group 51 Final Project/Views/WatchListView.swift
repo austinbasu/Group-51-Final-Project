@@ -7,9 +7,9 @@ struct WatchListView: View {
             
             VStack(alignment: .center) {
                 List {
-                    ForEach(movieModel.movieList, id: \.self) { movie in
+                    ForEach(movieModel.watchList, id: \.self) { movie in
                         Text("\(movie.movieTitle!)")
-                        Text("\(movie.rating!)")
+                        Text("\(movie.userRating!)")
                         NavigationLink("View Movie", destination:DetailMovieView(title: movie.movieTitle, descr: movie.description, rating: movie.rating, releaseDate: movie.releaseDate, genre: movie.genre))
                     }
                 }
@@ -30,10 +30,13 @@ struct WatchListView: View {
         {
             ToolbarItemGroup(placement: .navigationBarTrailing)
             {
-                NavigationLink(destination: AddMovieView(movieModel: movieModel))
+                NavigationLink(destination: AddMovieWatchListView(movieModel: movieModel))
             {
                 Label("Add", systemImage: "plus.app")
             }
+                //NavigationLink(destination: RecommendationView(movieModel: movieModel)) {
+                    //Label("Recommend", systemImage: "hand.thumbsup.fill")
+                //}
             }
         }
         }
